@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 
 /**
  * 模拟客户端--调用服务的controller
@@ -27,14 +30,14 @@ public class ClientController {
     @RequestMapping("/save")
     @ResponseBody
     public CommonResult save(String serial) {
-        return restTemplate.getForObject(serverUrl + "/payment/save/" + serial, CommonResult.class);
+        return restTemplate.getForObject(serverUrl + "/payment/save?serial=" + serial, CommonResult.class);
     }
 
 
     @RequestMapping("/get")
     @ResponseBody
     public CommonResult get(Long id) {
-        return restTemplate.getForObject(serverUrl + "/payment/get/" + id, CommonResult.class);
+        return restTemplate.getForObject(serverUrl + "/payment/get?id=" + id, CommonResult.class);
     }
 
     @RequestMapping("/getList")

@@ -1,8 +1,8 @@
 server:
-  port: 8001
+  port: 8002
 spring:
   application:
-    name: cloud-payment-service   #两个工程注册到同一个工程名称，单机测试负载均衡方式
+    name: cloud-payment-service  #两个工程注册到同一个工程名称，单机测试负载均衡方式
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver       #mysql驱动

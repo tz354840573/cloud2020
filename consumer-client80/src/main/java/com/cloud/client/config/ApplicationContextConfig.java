@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContextConfig {
 
     @Bean
-    @LoadBalanced //必写，用RestTemplate结合Ribbon做负载均衡的时候，nacos自带有负载均衡
+    @LoadBalanced //必写，用RestTemplate发送get和post请求--本机测试负载均衡，不写前台界面
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
